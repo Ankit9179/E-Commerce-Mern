@@ -1,0 +1,38 @@
+  @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto&display=swap');
+
+  /* .Product-listing-container {
+      padding: 5px;
+  } */
+
+  .Product-listing-container h1 {
+      font-family: 'Indie Flower', cursive;
+      /* font-family: 'Roboto', sans-serif; */
+      margin: 20px 0px;
+
+
+  }
+
+  .Product-card-box {
+      background-color: aqua;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      align-items: center;
+  }
+
+  .card-content {
+      margin: 20px;
+      width: 25%;
+  }
+
+  img {
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      padding: 10px;
+  }
+
+  .ctn-rating {
+      display: flex;
+      justify-content: space-between;
+  }
