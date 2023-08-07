@@ -1,10 +1,26 @@
  1. you need to create a react app with this command in terminal
    (npx create-react-app client) 
    and clean your react app include bootstrap CDN link on your html page inside your public folder
-2. .now you need to create a product listing page 
+   .now you need to create a product listing page 
    (ProductsListingPage.js) and (ProductsListingPage.css)
 
    . installed axios for data fetching from api
      ( npm i axios)
 
+   . and fetch 20 products data from api (https://fakestoreapi.com/products)
+
      you need to creae fully productListing page
+     
+ 2. you need to create a product detail page     
+
+    first you neet to react-router-dom for routing and 
+    send data (id) from productListing page to  producdetails page 
+
+    send data navigation('/product-detail',{state:{product:product[item.id-1]}})
+
+    and receive data   const data = location.state.product with the help of useLocaton() hook
+
+            import { useLocation } from 'react-router-dom'
+
+            
+
