@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react"
 import './ProductsListingPage.css'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 const ProductsListingPage = () => {
     const [product, setProduct] = useState([])
+    const navigation = useNavigate( ) //for navigation
 
     //call get data function for api data
     useEffect(() => {
@@ -42,7 +44,7 @@ const ProductsListingPage = () => {
                                 <h2>$ {item.price}</h2>
 
                                 <div className="ctn-rating">
-                                    <button className="btn btn-primary " >More</button>
+                                    <button className="btn btn-primary " onClick={()=>{navigation('/product-detail',{state:{product:product[item.id-1]}})}} >More</button>  
                                     <p>★	 {item.rating.rate}</p>
                                 </div>
 
