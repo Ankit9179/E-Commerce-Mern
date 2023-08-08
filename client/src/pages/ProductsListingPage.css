@@ -8,12 +8,13 @@
       font-family: 'Indie Flower', cursive;
       /* font-family: 'Roboto', sans-serif; */
       margin: 20px 0px;
+      margin-top: 7.5rem;
 
 
   }
 
   .Product-card-box {
-      background-color: rgb(128, 171, 171);
+      /* background-color: rgb(128, 171, 171); */
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;

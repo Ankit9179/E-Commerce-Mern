@@ -21,7 +21,7 @@ const ProductDtailsPage = () => {
               <p>★ {data.rating.rate}</p>
               <h3>$ {data.price}</h3>
               <div className='btn'>
-                <button className='btn btn-primary mt-3 mx-2'>Add To Cart</button>
+                <button className='btn btn-primary mt-3 mx-2' onClick={() => navigation('/product-cart',{state:{data:data}})}>Add To Cart</button>
                 <button className='btn btn-primary mt-3 mx-2' onClick={() => navigation('/')}>Go Back</button>
               </div>
             </div>
