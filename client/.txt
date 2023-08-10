@@ -22,4 +22,6 @@
 
             import { useLocation } from 'react-router-dom'
 
-            
+ 3. create a navbar page for cart 
+ 
+4. add redux toolkit in your project

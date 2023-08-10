@@ -2,8 +2,17 @@ import React, { useState, useEffect } from "react"
 import './ProductsListingPage.css'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const ProductsListingPage = () => {
+
+    //////////////////////////////////////////////////////////////cart  test redux
+
+    useSelector((item)=>{
+        console.log(item.cartItem.value)
+    })
+
+    //////////////////////////////////////////////////////
     const [product, setProduct] = useState([])
     const navigation = useNavigate( ) //for navigation
 

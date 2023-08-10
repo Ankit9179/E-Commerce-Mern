@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProductDtailsPage.css'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const ProductDtailsPage = () => {
+  const [cart,setCart] = useState([ ]) // for cart
   const location = useLocation()
   const navigation = useNavigate()
   const data = location.state.product //receive single product data 
+
+  //add cart ittem in cart
+  const addItem = (e) =>{
+    setCart([...cart,data])
+    
+    navigation('/product-cart',{state:{data:data}})
+  }
+  console.log(cart)
+
 
   return (
     <>
@@ -21,7 +31,7 @@ const ProductDtailsPage = () => {
               <p>★ {data.rating.rate}</p>
               <h3>$ {data.price}</h3>
               <div className='btn'>
-                <button className='btn btn-primary mt-3 mx-2' onClick={() => navigation('/product-cart',{state:{data:data}})}>Add To Cart</button>
+                <button className='btn btn-primary mt-3 mx-2' onClick={addItem}>Add To Cart</button>
                 <button className='btn btn-primary mt-3 mx-2' onClick={() => navigation('/')}>Go Back</button>
               </div>
             </div>
