@@ -1,0 +1,26 @@
+.main-div {
+    padding-top: 100px;
+
+}
+
+/* .cart-container {
+    padding-top: 100px;
+} */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+    height: 100px;
+    margin: 20px;
+    padding: 9px;
+    border-radius: 4px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+
+.cart-item img {
+    width: 60px;
+    overflow: hidden;
+}

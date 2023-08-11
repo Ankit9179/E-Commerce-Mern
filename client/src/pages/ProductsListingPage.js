@@ -2,19 +2,14 @@ import React, { useState, useEffect } from "react"
 import './ProductsListingPage.css'
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { addItem } from "../feature/cartSlice"; // 
+import { useDispatch } from "react-redux";
 
 const ProductsListingPage = () => {
-
-    //////////////////////////////////////////////////////////////cart  test redux
-
-    useSelector((item)=>{
-        console.log(item.cartItem.value)
-    })
-
-    //////////////////////////////////////////////////////
     const [product, setProduct] = useState([])
     const navigation = useNavigate( ) //for navigation
+    const dispatch = useDispatch() //
+    
 
     //call get data function for api data
     useEffect(() => {
@@ -30,8 +25,11 @@ const ProductsListingPage = () => {
             console.log(error)
         }
     }
-    // console.log(product)
 
+    //add items in your cart
+    const handleAddItem = (product) => {
+        dispatch(addItem(product)) //send product in our cart
+    }
 
     return <>
         <div className="Product-listing-container">
@@ -54,6 +52,7 @@ const ProductsListingPage = () => {
 
                                 <div className="ctn-rating">
                                     <button className="btn btn-primary " onClick={()=>{navigation('/product-detail',{state:{product:product[item.id-1]}})}} >More</button>  
+                                    <button className="btn btn-success "onClick={()=>handleAddItem(item)}>Add To Cart</button>  
                                     <p>★	 {item.rating.rate}</p>
                                 </div>
 

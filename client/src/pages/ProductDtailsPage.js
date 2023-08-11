@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './ProductDtailsPage.css'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { addItem } from '../feature/cartSlice'
+import {useDispatch} from 'react-redux'
+
 
 const ProductDtailsPage = () => {
-  const [cart,setCart] = useState([ ]) // for cart
   const location = useLocation()
   const navigation = useNavigate()
   const data = location.state.product //receive single product data 
+  const dispatch = useDispatch() //create variable with useDispatch functionality
 
-  //add cart ittem in cart
-  const addItem = (e) =>{
-    setCart([...cart,data])
-    
-    navigation('/product-cart',{state:{data:data}})
+
+  //Add item to cart
+  const handleAddItem = (item) =>{
+    dispatch(addItem(item))
+    navigation('/product-cart')
   }
-  console.log(cart)
-
 
   return (
     <>
@@ -31,7 +32,7 @@ const ProductDtailsPage = () => {
               <p>★ {data.rating.rate}</p>
               <h3>$ {data.price}</h3>
               <div className='btn'>
-                <button className='btn btn-primary mt-3 mx-2' onClick={addItem}>Add To Cart</button>
+                <button className='btn btn-primary mt-3 mx-2' onClick={()=>handleAddItem(data)}>Add To Cart</button>
                 <button className='btn btn-primary mt-3 mx-2' onClick={() => navigation('/')}>Go Back</button>
               </div>
             </div>
