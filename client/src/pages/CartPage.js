@@ -6,18 +6,23 @@ import { removeItem } from '../feature/cartSlice'  // remove action  from redux 
 
 
 const CartPage = () => {
-  const carts = useSelector((state) => state.cartItem) //get all items from your global state 
+  const cartIAllItems = useSelector((state) => state.cartItem) //get all items from your global state  => your cart
   const dispatch = useDispatch()
+
   //hsndle remove items frome your cart
   const handleRemove = (id) => {
     dispatch(removeItem(id)) //send item id for redux state
   }
+
+
+  let total = cartIAllItems.reduce((total, item) => total + item.price, 0)
+  console.log(total)
   return (
     <>
       <div className="main-div">
         <h1 className='text-center'>Your Items</h1>
         {
-          carts.map((item, index) => (
+          cartIAllItems.map((item, index) => (
             <div className='cart-container' key={index}>
               <div className="cart-item">
                 <img src={item.image} alt="img" />
@@ -28,6 +33,7 @@ const CartPage = () => {
             </div>
           ))
         }
+        <h3 className='text-end m-2'>Totel Price : $ {total}</h3>
       </div>
 
     </>
