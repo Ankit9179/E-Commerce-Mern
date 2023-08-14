@@ -9,14 +9,14 @@ const CartPage = () => {
   const cartIAllItems = useSelector((state) => state.cartItem) //get all items from your global state  => your cart
   const dispatch = useDispatch()
 
+
   //hsndle remove items frome your cart
   const handleRemove = (id) => {
     dispatch(removeItem(id)) //send item id for redux state
   }
 
-
+  // totle item in your cart
   let total = cartIAllItems.reduce((total, item) => total + item.price, 0)
-  console.log(total)
   return (
     <>
       <div className="main-div">
@@ -27,7 +27,7 @@ const CartPage = () => {
               <div className="cart-item">
                 <img src={item.image} alt="img" />
                 <h4>{item.title}</h4>
-                <h2>$ {item.price}</h2>
+                <h6 className='mb-2'>$ {item.price}</h6>
                 <button type="button" className="btn btn-danger" onClick={() => handleRemove(item.id)}>Rmove</button>
               </div>
             </div>
