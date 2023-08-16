@@ -1,20 +1,19 @@
 import React from 'react'
-import './NavBar.css'
+// import './NavBar.css'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-
-
 const NavBar = () => {
     const item = useSelector((state)=>state.cartItem) // cart item objects number from redux 
     const navigate = useNavigate()
     return (
         <>
-            <div className='nav-container'>
-                <div className='content'>
-                    <div className='logo'>E-Commerce</div>
-                    <div className='cart' onClick={()=>navigate("/product-cart")}> cart <p>{item.length}</p></div>
+                <div className='content bg-black flex justify-between p-5 fixed top-0 w-full'>
+                    <div className='text-white text-2xl '>E-Commerce</div>
+                    <div onClick={()=>navigate("/product-cart")} className='flex cursor-pointer hover:scale-90'>
+                      <div className='text-white text-2xl '> cart </div>
+                      <p className='text-red-500'>{item.length}</p>
+                    </div>
                 </div>
-            </div>
         </>
     )
 }
