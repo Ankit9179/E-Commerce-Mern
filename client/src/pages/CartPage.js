@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCartTotal } from '../feature/cartSlice'
-import { removeItem } from '../feature/cartSlice'  // remove action  from redux state
-import { increaseItem, decreaseItem } from '../feature/cartSlice'
+import { getCartTotal,removeItem ,increaseItem, decreaseItem,addItemLocalStotage} from '../feature/cartSlice'
 
 const CartPage = () => {
   //get all items from your global state  => your cart
@@ -11,7 +9,10 @@ const CartPage = () => {
 
   useEffect(() => {
     dispatch(getCartTotal())
+    dispatch(addItemLocalStotage())
+    
   }, [cart])
+
 
   //hsndle remove items frome your cart
   const handleRemove = (id) => {

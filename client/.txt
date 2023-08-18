@@ -25,3 +25,6 @@
  3. create a navbar page for cart 
  
 4. add redux toolkit in your project
+
+5.create cart page and add some animation on nav 
+6. add cart data in localstorage
