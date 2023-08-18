@@ -1,5 +1,4 @@
 import React from 'react'
-// import './ProductDtailsPage.css'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { addItem } from '../feature/cartSlice'
 import {useDispatch} from 'react-redux'
