@@ -25,7 +25,7 @@ const CartPage = () => {
           cart.map((item, index) => (
             <div className='cart-container' key={index}>
               <div className="flex justify-between items-center h-28 m-5 shadow-lg shadow-gray-200/50 p-2 rounded-md ">
-                <img className='w-20 overflow-hidden' src={item.image} alt="img" />
+                <img className='w-20 overflow-hidden p-2' src={item.image} alt="img" />
                 <h4>{item.title}</h4>
                 <h6 className='mb-2 text-2xl font-bold'>$ {item.price}</h6>
                 <div className='space-x-2 text-2xl'>
