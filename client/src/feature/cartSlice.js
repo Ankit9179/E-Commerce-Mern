@@ -1,11 +1,12 @@
 import {createSlice} from '@reduxjs/toolkit'
 import data from '../ItemData'
+//get data from localstorage
 const getdata = () =>{
-    let ne = localStorage.getItem("cart")
-    if(ne == []){
+    let localStorageData = localStorage.getItem("cart")
+    if(localStorageData == []){
         return []
     }else{
-        return JSON.parse(ne)
+        return JSON.parse(localStorageData)
     }
 }
 const initialState = {
