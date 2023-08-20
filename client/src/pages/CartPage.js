@@ -45,7 +45,7 @@ const CartPage = () => {
                   <b>{item.quantity}</b>
                   <span className='cursor-pointer' onClick={() => dispatch(decreaseItem(item.id))}>-</span>
                 </div>
-                <button type="button" className="bg-orange-500 text-white px-3 py-2 rounded-lg" onClick={() => handleRemove(item.id)}>Rmove</button>
+                <button type="button" className="bg-orange-500 text-white px-3 py-2 rounded-lg" onClick={() => handleRemove(item.id)}>Remove</button>
               </div>
             </div>
           ))

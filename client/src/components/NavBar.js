@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getCartTotal } from '../feature/cartSlice'
+import {AiOutlineShoppingCart} from 'react-icons/ai'
 
 const NavBar = () => {
     const dispatch = useDispatch()
@@ -16,8 +17,8 @@ const NavBar = () => {
                     <div className='text-white text-2xl'>E-Commerce</div>
                     <div className='text-white text-2xl cursor-pointer ' onClick={()=>navigate("/")}>Products</div>
                     <div onClick={()=>navigate("/product-cart")} className='flex cursor-pointer hover:scale-90'>
-                      <div className='text-white text-2xl '> cart </div>
-                      <p className='text-red-500'>{totalQuantity}</p>
+                      <div className='text-white text-3xl '> <AiOutlineShoppingCart /> </div>
+                      <p className='text-red-500 mt-[-9px]'>{totalQuantity}</p>
                     </div>
                 </div>
         </>
