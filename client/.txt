@@ -30,3 +30,7 @@
 6. add cart data in localstorage
 
 7. now you need to create a signup page and save user in datagbase
+
+8. now i am going to create a sign in page and check user in you localStorage 
+
+9. now to turn to create a pament page 

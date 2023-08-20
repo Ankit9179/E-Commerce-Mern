@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCartTotal,removeItem ,increaseItem, decreaseItem,addItemLocalStotage} from '../feature/cartSlice'
+import { useNavigate } from 'react-router-dom'
 
 const CartPage = () => {
+  const navigate = useNavigate() // for navigation
   //get all items from your global state  => your cart
   const { cart, totalQuantity, totalPrice } = useSelector((state) => state.cartItem)
   const dispatch = useDispatch()
@@ -17,6 +19,16 @@ const CartPage = () => {
   //hsndle remove items frome your cart
   const handleRemove = (id) => {
     dispatch(removeItem(id)) //send item id for redux state
+  }
+
+  //check user for payment
+  const chackUser = () =>{
+   const user = JSON.parse(localStorage.getItem("user")) //get user from localstorage
+   if(user){
+    navigate("/payment")
+   }else{
+    navigate("/sign-in")
+   }
   }
   return (
     <>
@@ -42,6 +54,7 @@ const CartPage = () => {
         <div className='mb-5'>
           <h3 className='text-end mr-10 font-bold text-2xl '>TotelQuantity - {totalQuantity}</h3>
           <h3 className='text-end mr-10 font-bold text-2xl '>TotelPrice : $ {totalPrice}</h3>
+          <button onClick={chackUser} className='bg-green-600 text-white p-2 rounded-md ml-96 '>Payment Page</button>
         </div>
       </div>
     </>
