@@ -52,8 +52,8 @@ const CartPage = () => {
         }
 
         <div className='mb-5'>
-          <h3 className='text-end mr-10 font-bold text-2xl '>TotelQuantity - {totalQuantity}</h3>
-          <h3 className='text-end mr-10 font-bold text-2xl '>TotelPrice : $ {totalPrice}</h3>
+          <h3 className='text-end mr-10 font-bold text-2xl '>TotalQuantity - {totalQuantity}</h3>
+          <h3 className='text-end mr-10 font-bold text-2xl '>TotalPrice : $ {totalPrice}</h3>
           <button onClick={chackUser} className='bg-green-600 text-white p-2 rounded-md ml-96 '>Payment Page</button>
         </div>
       </div>
