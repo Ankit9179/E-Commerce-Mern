@@ -17,7 +17,7 @@ const SignIn = () => {
         navigate("/sign-up")
         return
        }
-       if(user.email === inputs.email || user.password === inputs.password){
+       if(user.email === inputs.email && user.password === inputs.password){
         alert("log In successfuly")
         navigate("/payment")
        }else{
