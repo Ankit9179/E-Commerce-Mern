@@ -34,3 +34,7 @@
 8. now i am going to create a sign in page and check user in you localStorage 
 
 9. now to turn to create a pament page 
+
+10. //////////////////////////// server  //////////////
+
+11. create server folder and
