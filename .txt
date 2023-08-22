@@ -37,4 +37,6 @@
 
 10. //////////////////////////// server  //////////////
 
-11. create server folder and
+11. create server folder and create first server on node js hello world 
+
+12. create razor pay testing account  here (https://x.razorpay.com). generate id and key
