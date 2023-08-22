@@ -40,3 +40,15 @@
 11. create server folder and create first server on node js hello world 
 
 12. create razor pay testing account  here (https://x.razorpay.com). generate id and key
+
+13. install razorpay in server folder (npm i razorpay) and create instance  in server.js file
+
+    //rozoupay instance
+    export const instance = new Razorpay({
+    key_id: 'YOUR_KEY_ID',
+    key_secret: 'YOUR_KEY_SECRET',
+    });
+
+    and create routes conrtollers and modles
+
+14 . add piece of code in controllers file
