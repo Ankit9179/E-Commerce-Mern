@@ -52,3 +52,17 @@
     and create routes conrtollers and modles
 
 14 . add piece of code in controllers file
+
+ const options = {
+            amount: 50000,  // amount in the smallest currency unit 100 = 1 rupaya
+            currency: "INR",
+          };
+
+        const order = await instance.orders.create(options);
+
+        console.log(order)
+        res.status(201).send({
+            success:true
+        })
+
+15. hit checkOut backend url in front   

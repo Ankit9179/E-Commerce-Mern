@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 import {useSelector} from 'react-redux'
 
@@ -6,8 +7,13 @@ const Payment = () => {
   const {totalPrice} = useSelector((state)=>state.cartItem)//get totalprice
   const price = Math.floor( totalPrice)//
   //handle payment
-  const handlePayment = (data) => {
-    console.log(data)
+  const handlePayment = async (price) => {
+    try {
+      const {data} = await axios.post("http://localhost:8000/api/check",{price})
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <>

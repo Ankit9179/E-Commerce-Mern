@@ -5,6 +5,6 @@ import  {checkOut}  from "../controllers/PaymentControllers.js";
 const router = express.Router()
 
 //routes
-router.post("/check-out",checkOut)
+router.post("/check",checkOut)
 
 export default router
