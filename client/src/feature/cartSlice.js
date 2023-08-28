@@ -3,7 +3,7 @@ import data from '../ItemData'
 //get data from localstorage
 const getdata = () =>{
     let localStorageData = localStorage.getItem("cart")
-    if(localStorageData == []){
+    if(localStorageData == [] || localStorageData== null){
         return []
     }else{
         return JSON.parse(localStorageData)

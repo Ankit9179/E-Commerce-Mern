@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 const SignIn = () => {
     const navigate = useNavigate() //for navigation
@@ -9,21 +10,25 @@ const SignIn = () => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })
     }
     //get user from database
-    const handleSignIn = (e) => {
-        e.preventDefault()
-       const user = JSON.parse(localStorage.getItem("user")) //Json.parse is change data strring to normal
-       if(!user){
-        alert("you are not a user")
-        navigate("/sign-up")
-        return
-       }
-       if(user.email === inputs.email && user.password === inputs.password){
-        alert("log In successfuly")
-        navigate("/payment")
-       }else{
-        alert("you are not a user")
-        navigate("/sign-up")
-       }
+    const handleSignIn = async (e) => {
+            try {
+                e.preventDefault()
+                const {data} = await axios.post("http://localhost:8000/api/v1/e-commerce/user/sign-in",{
+                    email:inputs.email,
+                    password:inputs.password
+                })
+                if(data.success){
+                    //save in localstorage
+                    localStorage.setItem("user",JSON.stringify(data.user))
+                    alert("log In successfuly")
+                    navigate("/payment")
+                }else{
+                    alert("please enter right email and password")
+                }
+            } catch (error) {
+                console.log(error)
+            }
+
     }
   return (
     <>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios'
 
 const SignUp = () => {
     const navigate = useNavigate() //for navigation
@@ -9,10 +10,23 @@ const SignUp = () => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })
     }
     //save user in database
-    const handleSignUp = () => {
-        localStorage.setItem("user", JSON.stringify(inputs)) //set user in database
-        alert("user register successfuly")
-        navigate("/sign-in")
+    const handleSignUp = async (e) => {
+        try {
+            e.preventDefault()
+            const { data } = await axios.post("http://localhost:8000/api/v1/e-commerce/user/sign-up", {
+                name: inputs.name,
+                email: inputs.email,
+                password: inputs.password
+            })
+            if (data.success) {
+                alert("user register successfuly")
+                navigate("/sign-in")
+            }else{
+                alert(data.message)
+            }
+        } catch (error) {
+            console.log()
+        }
     }
     return (
         <>

@@ -8,12 +8,37 @@ const Payment = () => {
   const price = Math.floor( totalPrice)//
   //handle payment
   const handlePayment = async (price) => {
-    try {
-      const {data} = await axios.post("http://localhost:8000/api/check",{price})
-      console.log(data)
-    } catch (error) {
-      console.log(error)
-    }
+
+    //firs get id  from backend
+    const {data:{key}} = await axios.get("http://localhost:8000/api/v1/e-commerce/key-id")
+      //generate order
+      const {data:{order}} = await axios.post("http://localhost:8000/api/v1/e-commerce/order/check",{price})
+
+      //razorpay checkout handlerfun
+       const options = {
+        key:key, // Enter the Key ID generated from the Dashboard
+        amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        currency: "INR",
+        name: "Ankit Rahi",
+        description: "Test Transaction By Ankit",
+        image: "https://avatars.githubusercontent.com/u/120669540?v=4",
+        order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        callback_url: "http://localhost:8000/api/v1/e-commerce/order/payment-verification", // if transaction successful. its go to backend with (rp id ,ro id, r signature) key and value
+        prefill: {
+            name: "Gaurav Kumar",
+            email: "gaurav.kumar@example.com",
+            contact: "9000090000"
+        },
+        notes: {
+            "address": "Razorpay Corporate Office"
+        },
+        theme: {
+            "color": "#087BF7"
+        }
+    };
+    const razor = new window.Razorpay(options);
+    razor.open();
+   
   }
   return (
     <>

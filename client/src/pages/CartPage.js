@@ -30,6 +30,13 @@ const CartPage = () => {
     navigate("/sign-in")
    }
   }
+  const handleDcrease =(item) =>{
+    if(item.quantity == 1){
+      dispatch(removeItem(item.id))
+    }else{
+      dispatch(decreaseItem(item.id))
+    }
+  }
   return (
     <>
       <div className="mt-36">
@@ -43,7 +50,7 @@ const CartPage = () => {
                 <div className='space-x-2 text-2xl'>
                   <span className='cursor-pointer' onClick={() => dispatch(increaseItem(item.id))}>+</span>
                   <b>{item.quantity}</b>
-                  <span className='cursor-pointer' onClick={() => dispatch(decreaseItem(item.id))}>-</span>
+                  <span className='cursor-pointer' onClick={()=>handleDcrease(item)}>-</span>
                 </div>
                 <button type="button" className="bg-orange-500 text-white px-3 py-2 rounded-lg" onClick={() => handleRemove(item.id)}>Remove</button>
               </div>

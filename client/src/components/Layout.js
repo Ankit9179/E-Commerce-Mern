@@ -6,6 +6,7 @@ import CartPage from '../pages/CartPage'
 import SignUp from '../pages/SignUp'
 import SignIn from '../pages/SignIn'
 import Payment from '../pages/Payment'
+import PaymentSuccess from '../pages/PaymentSuccess'
 
 
 const Layout = () => {
@@ -18,6 +19,7 @@ const Layout = () => {
       <Route path='/sign-up' element={<SignUp />} />
       <Route path='/sign-in' element={<SignIn />} />
       <Route path='/payment' element={<Payment />} />
+      <Route path='/paymentsuccess' element={<PaymentSuccess />}/>
     </Routes>
     </>
   )
