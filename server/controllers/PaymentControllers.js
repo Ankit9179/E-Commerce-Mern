@@ -40,7 +40,7 @@ export const paymentVerification = (req,res) =>{
      if(Autenentic){
         //save in database
         // working here
-        res.redirect(`http://localhost:3000/paymentsuccess?reference=${razorpay_payment_id}`)
+        res.redirect(`https://e-commerce-mern-client.onrender.com/paymentsuccess?reference=${razorpay_payment_id}`)
      }else{
         res.status(400).json({
             success:false,
