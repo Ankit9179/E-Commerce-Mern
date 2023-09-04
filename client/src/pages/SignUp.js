@@ -13,7 +13,7 @@ const SignUp = () => {
     const handleSignUp = async (e) => {
         try {
             e.preventDefault()
-            const { data } = await axios.post("http://localhost:8000/api/v1/e-commerce/user/sign-up", {
+            const { data } = await axios.post("https://e-commerce-mern-server.onrender.com/api/v1/e-commerce/user/sign-up", {
                 name: inputs.name,
                 email: inputs.email,
                 password: inputs.password

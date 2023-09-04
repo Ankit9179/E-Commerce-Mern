@@ -10,9 +10,9 @@ const Payment = () => {
   const handlePayment = async (price) => {
 
     //firs get id  from backend
-    const {data:{key}} = await axios.get("http://localhost:8000/api/v1/e-commerce/key-id")
+    const {data:{key}} = await axios.get("https://e-commerce-mern-server.onrender.com/api/v1/e-commerce/key-id")
       //generate order
-      const {data:{order}} = await axios.post("http://localhost:8000/api/v1/e-commerce/order/check",{price})
+      const {data:{order}} = await axios.post("https://e-commerce-mern-server.onrender.com/api/v1/e-commerce/order/check",{price})
 
       //razorpay checkout handlerfun
        const options = {
@@ -23,7 +23,7 @@ const Payment = () => {
         description: "Test Transaction By Ankit",
         image: "https://avatars.githubusercontent.com/u/120669540?v=4",
         order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        callback_url: "http://localhost:8000/api/v1/e-commerce/order/payment-verification", // if transaction successful. its go to backend with (rp id ,ro id, r signature) key and value
+        callback_url: "https://e-commerce-mern-server.onrender.com/api/v1/e-commerce/order/payment-verification", // if transaction successful. its go to backend with (rp id ,ro id, r signature) key and value
         prefill: {
             name: "Gaurav Kumar",
             email: "gaurav.kumar@example.com",

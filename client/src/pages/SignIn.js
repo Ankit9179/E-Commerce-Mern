@@ -13,7 +13,7 @@ const SignIn = () => {
     const handleSignIn = async (e) => {
             try {
                 e.preventDefault()
-                const {data} = await axios.post("http://localhost:8000/api/v1/e-commerce/user/sign-in",{
+                const {data} = await axios.post("https://e-commerce-mern-server.onrender.com/api/v1/e-commerce/user/sign-in",{
                     email:inputs.email,
                     password:inputs.password
                 })
