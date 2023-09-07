@@ -31,7 +31,7 @@ const SignUp = () => {
     return (
         <>
             <div className=' bg-indigo-400 h-screen w-full flex justify-center pt-44'>
-                <div className='bg-slate-500 w-[90%] md:w-[50%] h-[50vh] rounded-md text-white '>
+                <div className='bg-slate-500 w-[90%] md:w-[50%] h-[50vh] rounded-md  '>
                     <form onSubmit={handleSignUp} className='flex flex-col align-middle justify-center text-center gap-6 p-4 drop-shadow-2xl'>
                         <h1 className='font-serif text-2xl'>Sign Up</h1>
                         <input className='block p-1 rounded-full px-3' onChange={handleInputs} required type="text" name="name" value={inputs.name} placeholder='Enter your name' />
