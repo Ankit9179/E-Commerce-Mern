@@ -42,13 +42,16 @@ const Payment = () => {
   }
   return (
     <>
-    <div className='bg-green-700 text-white h-screen flex justify-center'>
-      <div className='bg-red-400 h-36 p-3 gap-5 my-auto'>
-        <p  className='text-white mb-2 my-auto'>payment page</p>
-        <h1 className='text-black mb-3'>Amount : {price}</h1>
-        <button onClick={()=>handlePayment(price)} className='bg-red-600 p-2 block rounded-md  text-white'>Pay Now</button>
-      </div>
-    </div>
+    <div className='bg-green-700 text-white min-h-screen flex flex-col justify-center items-center'>
+
+<div className='bg-red-400 p-3 gap-3 mb-5'>
+  <p className='text-white text-center my-2'>Payment Page</p>
+  <h1 className='text-black text-center mb-2'>Amount: {price}</h1>
+  <button onClick={() => handlePayment(price)} className='bg-red-600 p-2 rounded-md text-white w-full'>Pay Now</button>
+</div>
+
+</div>
+
     </>
   )
 }
