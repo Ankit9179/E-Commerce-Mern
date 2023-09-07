@@ -33,7 +33,7 @@ const SignIn = () => {
   return (
     <>
             <div className=' bg-slate-500 h-screen w-full flex justify-center pt-44'>
-                <div className='bg-indigo-400 w-[50%] h-[50vh] rounded-md '>
+                <div className='bg-indigo-400 w-[90%] md:w-[50%] h-[50vh] rounded-md text-white '>
                     <form onSubmit={handleSignIn} className='flex flex-col align-middle justify-center text-center gap-6 p-5 drop-shadow-2xl'>
                         <h1 className='font-serif text-2xl'>Sign in</h1>
                         <input className='block p-2 rounded-full px-5' onChange={handleInputs} required type="email" name="email" value={inputs.email} placeholder='Enter your email' />
