@@ -17,7 +17,7 @@ const ProductDtailsPage = () => {
 
   return (
     <>
-      <div className='w-full h-screen mb-10 sm:mb-0'>
+      <div className='w-full h-full mb-10 sm:mb-0'>
   <div className="pt-10 sm:pt-28 w-full sm:w-[70%] m-auto">
     <div className='flex flex-col sm:flex-row justify-between align-middle p-4 sm:p-10 rounded-lg mt-4 sm:mt-7 shadow-md shadow-indigo-500/40'>
       <div className="text-center sm:text-left mb-4 sm:mb-0">
@@ -34,7 +34,7 @@ const ProductDtailsPage = () => {
         </div>
       </div>
     </div>
-    <p className='mt-4 sm:mt-10'>{data.description}</p>
+    <p className='mt-4 sm:mt-10 mb-6'>{data.description}</p>
   </div>
 </div>
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import { addItem } from "../feature/cartSlice"; // 
 import { useDispatch, useSelector } from "react-redux";
+import SliderCom from '../components/SliderCom'
 
 const ProductsListingPage = () => {
     const data = useSelector((state)=>state.cartItem.allData)
@@ -19,7 +20,8 @@ const ProductsListingPage = () => {
     }
     
     return <>
-        <div className="mt-24">
+    <SliderCom />
+        <div className="mt-16">
             <h1 className="text-center my-10 font-serif text-3xl">Products</h1>
             <div className="flex flex-wrap justify-center">
   {data.map((item, index) => (

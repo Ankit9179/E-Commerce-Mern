@@ -13,7 +13,7 @@ const NavBar = () => {
     },[cart])
     return (
         <>
-                <div className='content bg-black flex justify-between p-5 fixed top-0 w-full'>
+                <div className='content bg-black flex justify-between p-5 fixed top-0 w-full z-40'>
                     <div className='text-white text-2xl'>E-Commerce</div>
                     <div className='text-white text-2xl cursor-pointer ' onClick={()=>navigate("/")}>Products</div>
                     <div onClick={()=>navigate("/product-cart")} className='flex cursor-pointer hover:scale-90'>
