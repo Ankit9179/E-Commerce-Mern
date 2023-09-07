@@ -37,7 +37,7 @@ const SignUp = () => {
                         <input className='block p-1 rounded-full px-3' onChange={handleInputs} required type="text" name="name" value={inputs.name} placeholder='Enter your name' />
                         <input className='block p-1 rounded-full px-3' onChange={handleInputs} required type="email" name="email" value={inputs.email} placeholder='Enter your email' />
                         <input className='block p-1 rounded-full px-3' onChange={handleInputs} required type="password" name="password" value={inputs.password} placeholder='Enter your password' />
-                        <button className='bg-black rounded-md  uppercase text-white w-[15%] mx-auto hover:border-2'>Sin up</button>
+                        <button className='bg-black rounded-md  uppercase text-white w-[15%] mx-auto hover:border-2'>Sign up</button>
                         <p onClick={() => navigate("/sign-in")} className='cursor-pointer hover:text-white mt-[-19px]'>already a user? Sign In</p>
                     </form>
                 </div>
